@@ -1,0 +1,8 @@
+.logIn , .signUp{
+    text-decoration: none;
+    color: white;
+}
+
+.logIn{
+    margin: 0 5px;
+}
