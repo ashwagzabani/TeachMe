@@ -1,4 +1,137 @@
 {% extends 'base.html'%}
+{% load static %}
 {% block content%}
-<h1>hhhhhh</h1>
+<link href="{% static 'index.css' %}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div>
+    <div class="landing-image">
+        <img src="{% static 'landing-image.jpg' %}" class="img-fluid1" alt="landing-image" />
+    </div>
+    <div class="list-top-courses">
+        <div class="main">
+            <h1>Top Courses</h1>
+            <h5><a href="#">Show All</a></h5>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <img src="{% static 'landing-image.jpg' %}" alt="landing-image" width="240" height="200" />
+            </div>
+            <div class="card-body">
+                <h5>Responsive Websit</h5>
+                <div class="card-subtitle mb-2 text-muted">
+                    <p>Ashwag Zabani</p>
+                    <span><b class="checked">3</b></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span>(12)</span>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <h5>$19.99</h5>
+                <button class="btn btn-primary">Show more</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <img src="{% static 'landing-image.jpg' %}" alt="landing-image" width="240" height="200" />
+            </div>
+            <div class="card-body">
+                <h5>Angular</h5>
+                <div class="card-subtitle mb-2 text-muted">
+                    <p>Ashwag Zabani</p>
+                    <span><b class="checked">3</b></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span>(12)</span>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <h5>$19.99</h5>
+                <button class="btn btn-primary">Show more</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <img src="{% static 'landing-image.jpg' %}" alt="landing-image" width="240" height="200" />
+            </div>
+            <div class="card-body">
+                <h5>React Native</h5>
+                <div class="card-subtitle mb-2 text-muted">
+                    <p>Ashwag Zabani</p>
+                    <span><b class="checked">3</b></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span>(12)</span>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <h5>$19.99</h5>
+                <button class="btn btn-primary">Show more</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <img src="{% static 'landing-image.jpg' %}" alt="landing-image" width="240" height="200" />
+            </div>
+            <div class="card-body">
+                <h5>Python Object Oriented Programming</h5>
+                <div class="card-subtitle mb-2 text-muted">
+                    <p>Ashwag Zabani</p>
+                    <span><b class="checked">3</b></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span>(12)</span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <h5>$19.99</h5>
+                <button class="btn btn-primary">Show more</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <img src="{% static 'landing-image.jpg' %}" alt="landing-image" width="240" height="200" />
+            </div>
+            <div class="card-body">
+                <h5>Java Object Oriented Programming</h5>
+                <div class="card-subtitle mb-2 text-muted">
+                    <p>Ashwag Zabani</p>
+                    <span><b class="checked">3</b></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span>(12)</span>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <h5>$19.99</h5>
+                <button class="btn btn-primary">Show more</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
