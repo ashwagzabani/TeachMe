@@ -1,0 +1,26 @@
+.card{
+    display: inline-block;
+    margin: 10px 19px;
+    border-top: none; 
+    width: 240px; 
+}
+
+.card-header{
+    padding: 0px; 
+}
+
+.card-body{
+    width: 100%;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.card-footer{
+    border-top: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checked{
+    color: orange;
+}
