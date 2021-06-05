@@ -1,7 +1,7 @@
 # main_app/views.py
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Courses
+from .models import *
 
 
 def index(request):
@@ -19,3 +19,8 @@ def sign_up(request):
 
 def courses_list(request):
     return render(request, 'courses_list.html', {"title": "courses list"})
+
+
+def category_courses_list(request):
+    courses = Courses.objects.all()
+    return render(request, 'category_courses_list.html', {"category": courses})

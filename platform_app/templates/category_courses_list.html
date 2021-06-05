@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+{% for course in category %}
+<div class="card">
+    <div class="card-header">
+        <img src="{% static 'landing-image.jpg' %}" alt="landing-image" width="240" height="200" />
+    </div>
+    <div class="card-body">
+        <h5>{{ course.subject|truncatewords:6 }}</h5>
+        <div class="card-subtitle mb-2 text-muted">
+            <p>{{ course.author }}</p>
+            <span><b class="checked">{{ course.age }}</b></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span>(12)</span>
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <h5>$19.99</h5>
+        <button class="btn btn-primary">Show more</button>
+    </div>
+</div>
+
+{% endfor %}
+{% endblock %}
