@@ -1,0 +1,17 @@
+.footer{
+    padding: 20px;
+    background-color: lightgray;
+}
+
+.footer .footer-list{
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+.footer .footer-list li{
+    margin-top: 10px;
+}
+
+.footer p{
+    text-align: center;
+}

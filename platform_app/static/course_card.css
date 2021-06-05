@@ -21,6 +21,26 @@
     justify-content: space-between;
 }
 
+/* .list-group-card{
+    display: block;
+    width: auto;
+} */
+/* 
+.list-group-card .card-header{
+    position: absolute;
+}
+
+.list-group-card .card-body, .list-group-card .card-footer{
+    margin-left: 20%;
+}
+
 .checked{
     color: orange;
-}
+} */
+
+/* @media only screen and (max-width: 600px) {
+    .list-group-card img{
+        width: 124px;
+        height: 104px;
+    }
+} */

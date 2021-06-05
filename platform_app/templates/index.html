@@ -10,20 +10,59 @@
 <div class="landing-image">
     <img src="{% static 'landing-image.jpg' %}" class="img-fluid1" alt="landing-image" />
 </div>
-<div class="list-top-courses">
-    <div class="main">
-        <h1>Top Courses</h1>
-        <h5><a href="#">Show All</a></h5>
+
+<div class="container-fluid">
+
+    <div class="top-courses-list">
+        <div class="main">
+            <h1>Top Courses</h1>
+            <div>
+                <p onclick="listView()"><i class="fa fa-bars"></i></p>
+                <p onclick="gridView()"><i class="fa fa-th-large"></i></p>
+            </div>
+        </div>
+
+
+        {% for course in courses %}
+
+        <div class="card">
+            <div class="card-header">
+                <img src="{% static 'landing-image.jpg' %}" alt="landing-image" width="240" height="200" />
+            </div>
+            <div class="card-body">
+                <h5>{{ course.subject|truncatewords:6 }}</h5>
+                <div class="card-subtitle mb-2 text-muted">
+                    <p>{{ course.author }}</p>
+                    <span><b class="checked">{{ course.age }}</b></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span>(12)</span>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <h5>$19.99</h5>
+                <button class="btn btn-primary">Show more</button>
+            </div>
+        </div>
+
+        {% endfor %}
+
     </div>
 
-    {% for course in courses%}
 
-    <div class="card">
+    <!-- {% for course in courses %}
+
+    <div class="card list-group-card">
         <div class="card-header">
-            <img src="{% static 'landing-image.jpg' %}" alt="landing-image" width="240" height="200" />
+            <img src="{% static 'landing-image.jpg' %}" class="img-fluid" alt="landing-image" width="240"
+                height="200" />
         </div>
         <div class="card-body">
-            <h5>{{ course.subject }}</h5>
+            <h5>{{ course.subject|truncatewords:6 }}</h5>
             <div class="card-subtitle mb-2 text-muted">
                 <p>{{ course.author }}</p>
                 <span><b class="checked">{{ course.age }}</b></span>
@@ -42,13 +81,15 @@
         </div>
     </div>
 
-    {% endfor %}
+    {% endfor %} -->
 
 </div>
-<div class="footer">
-    <form class="d-flex">
-        <input class="form-control" type="email" placeholder="Newsletter" aria-label="Newsletter">
-        <button class="btn btn-outline-success" type="submit">Submit</button>
-    </form>
 </div>
+
 {% endblock %}
+
+<script>
+    function listView() {
+
+    }
+</script>
