@@ -4,7 +4,15 @@
     position: absolute !important;
     right: 0;
     z-index: 2;
-    animation: showToggle 3s;
+    /* animation: show 3s; */
+}
+
+.show{
+    animation: show 3s;    
+}
+
+.hide{
+    animation: hide 3s 5s;
 }
 
 .toaster .alert{
@@ -15,7 +23,7 @@
 @keyframes show {
     0%   {right: -1000px ;}
     /* 25%  {background-color:yellow; left:200px; top:0px;} */
-    100%  {right:10px; animation: hide 3s 5s;}
+    100%  {right:10px; }
     /* 75%  {background-color:green; left:0px; top:200px;} */
     /* 100% {background-color:red; right: -1000px ;} */
 }

@@ -112,3 +112,21 @@
 </body>
 
 </html>
+
+<script>
+    $(document.body).ready(function () {
+        if (!$(".toaster").is(".show")) {
+            setTimeout(function () {
+                $(".toaster").removeClass(".show");
+                $(".toaster").addClass(".hide");
+            }, 1000);
+        } else {
+            $(".toaster").addClass(".show");
+            setTimeout(function () {
+                $(".toaster").removeClass(".show");
+                $(".toaster").addClass(".hide");
+            }, 1000);
+            $(".toaster").css("display: none;");
+        }
+    });
+</script>
