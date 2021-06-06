@@ -1,7 +1,9 @@
 # main_app/views.py
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 
 def index(request):
@@ -13,8 +15,17 @@ def log_in(request):
     return render(request, 'index.html', {"title": "Log In"})
 
 
-def sign_up(request):
-    return render(request, 'index.html', {"title": "Sign Up"})
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            messages.success(
+                request, f'Account created successfully for {username} .')
+            return redirect('index')
+    else:
+        form = UserCreationForm()
+    return render(request, 'users/register.html', {"form": form})
 
 
 def courses_list(request):

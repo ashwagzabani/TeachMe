@@ -4,6 +4,7 @@
 
 <head>
     <title>Home</title>
+    <link href="{% static 'toaster.css' %}" rel="stylesheet" type="text/css" />
     <link href="{% static 'btn.css' %}" rel="stylesheet" type="text/css" />
     <link href="{% static 'base.css' %}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -56,6 +57,19 @@
             <a href="#" class="btn btn-outline-success signUp">Sign Up</a>
         </div>
     </nav>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success toaster">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="toaster">
+        <div class="alert alert-success">
+            bla bla bla
+        </div>
+    </div>
 
     {% block content %}{% endblock %}
 
