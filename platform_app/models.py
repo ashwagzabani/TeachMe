@@ -9,6 +9,7 @@ class User_profile(models.Model):
     user_id = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_picture = models.ImageField(
         upload_to='profile_img/', blank=True, default='profile_img/profile.png', verbose_name="Picture:")
+    is_teacher = models.BooleanField(default=False)
 
 
 class Categories(models.Model):

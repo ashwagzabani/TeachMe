@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .models import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from .forms import SignUpForm
 
 
 def index(request):
@@ -17,8 +18,9 @@ def log_in(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = SignUpForm(request.POST)
         if form.is_valid():
+            form.save()  # to save data to db
             username = form.cleaned_data.get('username')
             messages.success(
                 request, f'Account created successfully for {username} .')
