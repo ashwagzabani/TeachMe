@@ -7,6 +7,7 @@
     <link href="{% static 'toaster.css' %}" rel="stylesheet" type="text/css" />
     <link href="{% static 'btn.css' %}" rel="stylesheet" type="text/css" />
     <link href="{% static 'base.css' %}" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -60,16 +61,13 @@
 
     {% if messages %}
     {% for message in messages %}
-    <div class="alert alert-success toaster">
-        {{ message }}
+    <div class="toaster toasterToggle">
+        <div class="alert alert-{{ message.tags }}">
+            <i class="fa fa-check"></i> {{ message }}
+        </div>
     </div>
     {% endfor %}
     {% endif %}
-    <div class="toaster">
-        <div class="alert alert-success">
-            bla bla bla
-        </div>
-    </div>
 
     {% block content %}{% endblock %}
 
@@ -114,19 +112,11 @@
 </html>
 
 <script>
-    $(document.body).ready(function () {
-        if (!$(".toaster").is(".show")) {
-            setTimeout(function () {
-                $(".toaster").removeClass(".show");
-                $(".toaster").addClass(".hide");
-            }, 1000);
-        } else {
-            $(".toaster").addClass(".show");
-            setTimeout(function () {
-                $(".toaster").removeClass(".show");
-                $(".toaster").addClass(".hide");
-            }, 1000);
-            $(".toaster").css("display: none;");
-        }
+    $(document).ready(function () {
+        console.log("shown")
+        setTimeout(function () {
+            $(".toaster").removeClass("toasterToggle");
+            console.log("removed")
+        }, 8000);
     });
 </script>

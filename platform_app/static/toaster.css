@@ -1,18 +1,10 @@
 .toaster{
-    width: 300px;
+    visibility: hidden;
+    width: 350px;
     display: block;
     position: absolute !important;
     right: 0;
     z-index: 2;
-    /* animation: show 3s; */
-}
-
-.show{
-    animation: show 3s;    
-}
-
-.hide{
-    animation: hide 3s 5s;
 }
 
 .toaster .alert{
@@ -20,18 +12,17 @@
     position: fixed;
 }
 
-@keyframes show {
-    0%   {right: -1000px ;}
-    /* 25%  {background-color:yellow; left:200px; top:0px;} */
-    100%  {right:10px; }
-    /* 75%  {background-color:green; left:0px; top:200px;} */
-    /* 100% {background-color:red; right: -1000px ;} */
+.toasterToggle{
+    visibility: visible;
+    animation: fadeIn 3s, fadeOut 3s 7s;    
 }
 
-@keyframes hide {
-    /* 0%   { display: block ; background-color:red; right: -1000px ;} */
-    /* 25%  {background-color:yellow; left:200px; top:0px;} */
-     /* 50%  {background-color:blue; right:0px;} */
-    /* 75%  {background-color:green; left:0px; top:200px;} */
+@keyframes fadeIn {
+    0%   {right: -1000px ;}
+    100%  {right:0px; }
+}
+
+@keyframes fadeOut {
+    0% { right: 0px}
     100% {right: -1000px ;}
 }
