@@ -1,6 +1,5 @@
 # main_app/views.py
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from .models import *
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -26,7 +25,7 @@ def register(request):
                 request, f'Account created successfully for {username} .')
             return redirect('index')
     else:
-        form = UserCreationForm()
+        form = SignUpForm()
     return render(request, 'users/register.html', {"form": form})
 
 
