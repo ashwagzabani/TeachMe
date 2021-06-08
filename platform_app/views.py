@@ -1,5 +1,5 @@
 # main_app/views.py
-from django.shortcuts import render, redirect , HttpResponseRedirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import User
@@ -32,6 +32,8 @@ def register(request):
 
 def logout_view(request):
     logout(request)
+    messages.success(
+        request, f'You are Logged out .')
     return HttpResponseRedirect('/')
 
 

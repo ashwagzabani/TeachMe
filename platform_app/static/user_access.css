@@ -94,6 +94,13 @@ h1{
     width: 60%;
 }
 
+.left-side-log-in .btn-login button{
+    background-color: #ffffff;
+    color: #00546c;
+    margin-top: 10%;
+    width: 60%;
+}
+
 .right-side .btn-submit button{
     background-color: #00546c;
     width: 100%;
