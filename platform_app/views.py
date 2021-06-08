@@ -30,6 +30,7 @@ def register(request):
     return render(request, 'users/register.html', {"form": form})
 
 
+
 def logout_view(request):
     logout(request)
     messages.success(
