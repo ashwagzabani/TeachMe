@@ -7,8 +7,10 @@ class SignUpForm(UserCreationForm):
     first_name = forms.CharField()
     last_name = forms.CharField()
     email = forms.EmailField()
+    is_staff = forms.BooleanField(
+        label='Register as instructor', required=False)
 
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username',
-                  'email', 'password1', 'password2']
+                  'email', 'password1', 'password2', 'is_staff']
