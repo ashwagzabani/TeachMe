@@ -1,7 +1,8 @@
 # main_app/views.py
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect , HttpResponseRedirect
 from .models import *
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import User
 from django.contrib import messages
 from .forms import SignUpForm
 
@@ -27,6 +28,11 @@ def register(request):
     else:
         form = SignUpForm()
     return render(request, 'users/register.html', {"form": form})
+
+
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/')
 
 
 def courses_list(request):

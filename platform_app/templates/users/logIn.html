@@ -4,27 +4,26 @@
 {% block content%}
 
 <link href="{% static 'user_access.css' %}" rel="stylesheet" type="text/css" />
-<!-- <link href="{% static 'userform.css' %}" rel="stylesheet" type="text/css" /> -->
 
 <div class="content-section">
     <div class="row">
-        <div class="col-md-3 left-side">
+        <div class="col-md-3 left-side-log-in">
             <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="plane icon" width="60px" height="60px" />
             <h2>Welcome</h2>
-            <p>You are 40 seconds away from beginning your learning journey!</p>
+            <p>Rmember why your started!</p>
             <div class="button btn-login">
-                <button class="btn btn-defult" type="submit">Log In</button>
+                <button class="btn btn-defult" type="submit">Sign Up</button>
             </div>
         </div>
         <div class="col-md-9 right-side">
             <h1>Joining Today!</h1>
-            <form method="POST">
+            <form method="POST" class="log-in">
                 {% csrf_token %}
                 <fieldset class="form-group">
                     {{ form|crispy }}
                 </fieldset>
                 <div class="button btn-submit">
-                    <button class="btn btn-defult" type="submit">Sign Up</button>
+                    <button class="btn btn-defult" type="submit">Log In</button>
                 </div>
             </form>
         </div>

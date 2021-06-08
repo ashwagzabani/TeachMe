@@ -11,7 +11,7 @@ h1{
     padding: 55px 0 10px ;
 }
 
-.left-side {
+.left-side , .left-side-log-in{
     text-align: center;
     color: #ffffff;
 }
@@ -22,6 +22,11 @@ h1{
     animation: mover 1s infinite  alternate;
 }
 
+.left-side-log-in img{
+    margin: 25% 40% 10%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
 @-webkit-keyframes mover {
     0% { transform: translateY(0); }
     100% { transform: translateY(-20px); }
@@ -31,7 +36,6 @@ h1{
     0% { transform: translateY(0); }
     100% { transform: translateY(-20px); }
 }
-
 
 
 .left-side p {
@@ -45,15 +49,31 @@ h1{
     margin: 20px 0;
 }
 
+.left-side-log-in p {
+    padding: 5%;
+    font-size: 16pt;
+}
+.right-side-log-in{
+    background-color: #ffffff;
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+    margin: 20px 0;
+}
+
 .right-side form{
     margin: 0 auto;
     width: 73%;
     
 }
 
-.form-group{
+.right-side .log-in{
+    width: 50%;
+}
+
+.sign-up {
     display: grid;
     grid-template-columns: auto auto;
+    column-gap: 15px;
     padding: 10px;
 }
 
