@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content %}
+<link href="{% static 'base_creation_form.css' %}" rel="stylesheet" type="text/css" />
+
+<div class="base-vreation-form">
+    <div class="container-fluid">
+        <div class="card">
+            <h2>Create yor own course</h2>
+            <ul class="progressbar">
+                <li class="active" id="course_definition"><strong>definition</strong></li>
+                <li class="active" id="details"><strong>Details</strong></li>
+                <li id="privacy"><strong>Privacy</strong></li>
+                <li id="attechment"><strong>Attachments</strong></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

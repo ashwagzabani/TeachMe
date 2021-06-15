@@ -1,5 +1,6 @@
 # main_app/views.py
 from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.views.generic.edit import CreateView
 from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import User
@@ -30,7 +31,6 @@ def register(request):
     return render(request, 'users/register.html', {"form": form})
 
 
-
 def logout_view(request):
     logout(request)
     messages.success(
@@ -45,3 +45,9 @@ def courses_list(request):
 def category_courses_list(request):
     courses = Courses.objects.all()
     return render(request, 'category_courses_list.html', {"category": courses})
+
+
+class courseCreate(CreateView):
+    model = Courses
+    fields = '__all__'
+    success_url = '/'

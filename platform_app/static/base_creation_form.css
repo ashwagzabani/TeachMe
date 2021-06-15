@@ -1,0 +1,91 @@
+.base-vreation-form .card{
+    margin: 20px auto;
+    width: 75%;
+    padding: 20px 0px;
+    border: 1px solid lightgray;
+
+}
+
+.base-vreation-form h2{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+ul.progressbar {
+    padding: 0px;
+}
+
+ul.progressbar li{
+    list-style-type: none;
+    font-size: 12px;
+    width: 25%;
+    float: left;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+} 
+
+.progressbar #course_definition:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    text-align: center;
+    content: "\f51b";
+}
+
+.progressbar #details:before {
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 900;
+    text-align: center;
+    content: "\f099"; /* we need it to make icon show up*/
+}
+
+.progressbar #privacy:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    text-align: center;
+    content: "\f09d"
+}
+
+.progressbar #attechment:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    text-align: center;
+    content: "\f502"
+}
+
+
+.progressbar .active {
+    color: #000000
+}
+
+
+.progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+.progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+.progressbar li.active:before,
+.progressbar li.active:after {
+    background: #00546c;
+}
+
+
