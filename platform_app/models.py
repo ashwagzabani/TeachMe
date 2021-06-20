@@ -17,11 +17,11 @@ class Categories(models.Model):
 
 
 class Courses(models.Model):
-    category_id = models.ForeignKey(Categories, on_delete=models.CASCADE)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    category_id = models.ForeignKey(
+        Categories, on_delete=models.CASCADE, verbose_name='Course category')
+    instroctor = models.ForeignKey(User, on_delete=models.CASCADE)
     subject = models.CharField(max_length=250)
     description = models.CharField(max_length=250)
-    age = models.IntegerField()
     course_image = models.ImageField(
         upload_to='profile_img/', blank=True, default='profile_img/profile.png', verbose_name="Picture:")
     requirment = models.CharField(max_length=250)
@@ -30,6 +30,9 @@ class Courses(models.Model):
     end_date = models.DateTimeField()
     rate = models.FloatField()
     is_private = models.BooleanField(default=False)
+
+    # def __str__(self):
+    #     return "%s owned by %s " % (self.store_name, self.user)
 
 
 class Enrollment(models.Model):

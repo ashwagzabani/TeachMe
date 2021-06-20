@@ -5,7 +5,7 @@ from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import User
 from django.contrib import messages
-from .forms import SignUpForm
+from .forms import SignUpForm, CourseDefinitionForm
 
 
 def index(request):
@@ -47,7 +47,40 @@ def category_courses_list(request):
     return render(request, 'category_courses_list.html', {"category": courses})
 
 
-class courseCreate(CreateView):
+class CourseDefinitionForm(CreateView):
     model = Courses
-    fields = '__all__'
+    fields = ['subject', 'category_id', 'course_image']
     success_url = '/'
+
+    def form_valid(self, form, *kwargs):
+        self.object = form.save(commit=False)
+        self.object.instroctor = self.request.user.id
+        # self.object.save()
+        return HttpResponseRedirect('/')
+
+
+# class CourseDefinitionForm(CreateView):
+#     subject = models.CharField(
+#         label='Course subject')
+#     category_id = models.SelectMultiple()
+#     course_image = models.ImageField(
+#         label='Cover image')
+
+#     class Meta:
+#         model = Courses
+
+#     def __init__(*args, **kwargs):
+#         super().__init__(*args, **kwargs)
+
+
+# def courseDefinition(request):
+#     if request.method == 'POST':
+#         form = CourseDefinitionForm(request.POST)
+#         if form.is_valid():
+#             form.save()  # to save data to db
+#             messages.success(
+#                 request, f'Account created successfully for.')
+#             return redirect('index')
+#     else:
+#         form = CourseDefinitionForm()
+#     return render(request, 'users/register.html', {"form": form})
